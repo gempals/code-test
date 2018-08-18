@@ -25,7 +25,11 @@ CREATE TABLE `migrations` (
 
 /*Data for the table `migrations` */
 
+LOCK TABLES `migrations` WRITE;
+
 insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2018_08_18_143927_create_news_table',1);
+
+UNLOCK TABLES;
 
 /*Table structure for table `model_has_permissions` */
 
@@ -42,6 +46,10 @@ CREATE TABLE `model_has_permissions` (
 
 /*Data for the table `model_has_permissions` */
 
+LOCK TABLES `model_has_permissions` WRITE;
+
+UNLOCK TABLES;
+
 /*Table structure for table `model_has_roles` */
 
 DROP TABLE IF EXISTS `model_has_roles`;
@@ -57,7 +65,11 @@ CREATE TABLE `model_has_roles` (
 
 /*Data for the table `model_has_roles` */
 
+LOCK TABLES `model_has_roles` WRITE;
+
 insert  into `model_has_roles`(`role_id`,`model_id`,`model_type`) values (1,85,'App\\User'),(1,92,'App\\User');
+
+UNLOCK TABLES;
 
 /*Table structure for table `news` */
 
@@ -77,7 +89,11 @@ CREATE TABLE `news` (
 
 /*Data for the table `news` */
 
+LOCK TABLES `news` WRITE;
+
 insert  into `news`(`id`,`title`,`summary`,`detail`,`redactional`,`publish_date`,`created_at`,`updated_at`) values (4,'Kian Klop dengan Beto Goncalves, Stefano Lilipaly: Kami Punya Chemistry','<p>Stefano Lilipaly dan Beto Goncalves kian klop di lini depan timnas Indonesia U-23. Lilipaly merasa memiliki chemistry dengan pemain 37 tahun itu.</p>','<p><strong>Bekasi</strong>&nbsp;-&nbsp;<a href=\"https://www.detik.com/tag/stefano-lilipaly/\" target=\"_blank\" rel=\"noopener\">Stefano Lilipaly</a>&nbsp;dan&nbsp;<a href=\"https://www.detik.com/tag/beto-goncalves/\" target=\"_blank\" rel=\"noopener\">Beto Goncalves</a>&nbsp;kian klop di lini depan&nbsp;<a href=\"https://www.detik.com/tag/timnas-indonesia-u_23/\" target=\"_blank\" rel=\"noopener\">timnas Indonesia U-23</a>. Lilipaly merasa memiliki chemistry dengan pemain 37 tahun itu.<br /><br />Timnas Indonesia U-23 sukses mengalahkan Laos 3-0 laga lanjutan Grup A&nbsp;<a href=\"https://sport.detik.com/asian-games-2018\" target=\"_blank\" rel=\"noopener\">Asian Games 2018</a>. Tiga gol di Stadion Patriot Candrabhaga, Jumat (17/8/2018), dibukukan oleh Alberto Goncalves (dua gol) dan Ricky Fajrin.<br /><br />Gol kedua Indonesia merupakan hasil kerja sama antara Beto dengan Lilipaly. Pemain Bali United itu mengirimkan umpan dengan tumit, yang diselesaikan dengan tendangan Beto.</p>\r\n<p>Ini merupakan assist kedua Lilipaly kepada Beto. Pada laga sebelumnya, keduanya berkontribusi saat mengalahkan Taiwan 4-0.</p>','<p><strong>Bekasi</strong>&nbsp;-&nbsp;<a href=\"https://www.detik.com/tag/stefano-lilipaly/\" target=\"_blank\" rel=\"noopener\">Stefano Lilipaly</a>&nbsp;dan&nbsp;<a href=\"https://www.detik.com/tag/beto-goncalves/\" target=\"_blank\" rel=\"noopener\">Beto Goncalves</a>&nbsp;kian klop di lini depan&nbsp;<a href=\"https://www.detik.com/tag/timnas-indonesia-u_23/\" target=\"_blank\" rel=\"noopener\">timnas Indonesia U-23</a>. Lilipaly merasa memiliki chemistry dengan pemain 37 tahun itu.<br /><br />Timnas Indonesia U-23 sukses mengalahkan Laos 3-0 laga lanjutan Grup A&nbsp;<a href=\"https://sport.detik.com/asian-games-2018\" target=\"_blank\" rel=\"noopener\">Asian Games 2018</a>. Tiga gol di Stadion Patriot Candrabhaga, Jumat (17/8/2018), dibukukan oleh Alberto Goncalves (dua gol) dan Ricky Fajrin.<br /><br />Gol kedua Indonesia merupakan hasil kerja sama antara Beto dengan Lilipaly. Pemain Bali United itu mengirimkan umpan dengan tumit, yang diselesaikan dengan tendangan Beto.</p>\r\n<p>Ini merupakan assist kedua Lilipaly kepada Beto. Pada laga sebelumnya, keduanya berkontribusi saat mengalahkan Taiwan 4-0.</p>','2018-08-24','2018-08-19 00:11:14','2018-08-19 00:15:11');
+
+UNLOCK TABLES;
 
 /*Table structure for table `password_resets` */
 
@@ -91,6 +107,10 @@ CREATE TABLE `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `password_resets` */
+
+LOCK TABLES `password_resets` WRITE;
+
+UNLOCK TABLES;
 
 /*Table structure for table `permissions` */
 
@@ -107,7 +127,11 @@ CREATE TABLE `permissions` (
 
 /*Data for the table `permissions` */
 
+LOCK TABLES `permissions` WRITE;
+
 insert  into `permissions`(`id`,`name`,`guard_name`,`created_at`,`updated_at`) values (1,'view_users','web','2017-07-17 07:30:12','2017-07-17 07:30:12'),(2,'add_users','web','2017-07-17 07:30:12','2017-07-17 07:30:12'),(3,'edit_users','web','2017-07-17 07:30:12','2017-07-17 07:30:12'),(4,'delete_users','web','2017-07-17 07:30:12','2017-07-17 07:30:12'),(5,'view_roles','web','2017-07-17 07:30:12','2017-07-17 07:30:12'),(6,'add_roles','web','2017-07-17 07:30:13','2017-07-17 07:30:13'),(7,'edit_roles','web','2017-07-17 07:30:13','2017-07-17 07:30:13'),(8,'delete_roles','web','2017-07-17 07:30:13','2017-07-17 07:30:13'),(126,'view_news','web','2018-08-18 14:43:23','2018-08-18 14:43:23'),(127,'add_news','web','2018-08-18 14:43:23','2018-08-18 14:43:23'),(128,'edit_news','web','2018-08-18 14:43:23','2018-08-18 14:43:23'),(129,'delete_news','web','2018-08-18 14:43:23','2018-08-18 14:43:23');
+
+UNLOCK TABLES;
 
 /*Table structure for table `role_has_permissions` */
 
@@ -124,7 +148,11 @@ CREATE TABLE `role_has_permissions` (
 
 /*Data for the table `role_has_permissions` */
 
+LOCK TABLES `role_has_permissions` WRITE;
+
 insert  into `role_has_permissions`(`permission_id`,`role_id`) values (1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(126,1),(127,1),(128,1),(129,1);
+
+UNLOCK TABLES;
 
 /*Table structure for table `roles` */
 
@@ -141,7 +169,11 @@ CREATE TABLE `roles` (
 
 /*Data for the table `roles` */
 
+LOCK TABLES `roles` WRITE;
+
 insert  into `roles`(`id`,`name`,`guard_name`,`created_at`,`updated_at`) values (1,'Admin','web','2017-07-17 07:30:41','2017-07-17 07:30:41');
+
+UNLOCK TABLES;
 
 /*Table structure for table `users` */
 
@@ -170,7 +202,11 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
+LOCK TABLES `users` WRITE;
+
 insert  into `users`(`id`,`username`,`name`,`email`,`password`,`remember_token`,`active`,`verified`,`email_token`,`m_organizational_structures_id`,`subfields_id`,`company_id`,`updated_at`,`created_at`,`last_login`,`last_logout`) values (92,'1010','Editor Berita','editor@detik.com','$2y$10$A7mSY5gHytB6S64RLooQrOl0LtNVEzVmbDFUC2n9cX3l6/DoIsDxa','kcEcUAJSwz9kKjwZCOpzt0KfIJLoxA6DFwz6PAzNBDoJY4zZH8S1K1ppIMHk',1,1,NULL,NULL,NULL,NULL,'2018-08-19 00:30:22','2018-01-22 16:24:59','2018-08-19 00:26:32','2018-08-19 00:30:22');
+
+UNLOCK TABLES;
 
 /*Table structure for table `visitlogs` */
 
@@ -199,7 +235,11 @@ CREATE TABLE `visitlogs` (
 
 /*Data for the table `visitlogs` */
 
+LOCK TABLES `visitlogs` WRITE;
+
 insert  into `visitlogs`(`id`,`ip`,`browser`,`os`,`user_id`,`user_name`,`country_code`,`country_name`,`region_name`,`city`,`zip_code`,`time_zone`,`latitude`,`longitude`,`hits`,`created_at`,`updated_at`) values (1,'::1','Chrome (63.0.3239.132)','Windows','0','Guest','','','','','','','0','0',70,'2018-02-02 11:52:34','2018-02-06 12:15:37');
+
+UNLOCK TABLES;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
