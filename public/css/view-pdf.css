@@ -1,0 +1,11 @@
+.IMGVIEWERCSS {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: none;
+    pointer-events: none;
+}

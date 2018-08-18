@@ -1,0 +1,295 @@
+@extends('layouts.front') 
+@section('title', 'Kotaku : Kota Tanpa Kumuh') 
+@section('content') 
+  <!-- start banner area -->
+  <section id="imgbanner">  
+    <h2>Registrasi</h2>     
+  </section>
+  <!-- End banner area -->
+  
+
+
+  <!-- start content editing  -->
+  <section id="blogArchive">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+         <div class="blogArchive_area">
+         <!-- start page left side -->
+          <div class="single_archiveblog">         
+            <div class="archiveblog_right page_left">
+              <h2>Online Registrastion Form</h2>                
+              <ul>
+              <table width="100%" border='0' cellpadding="0" cellspacing="0"> 
+                <div id="register" class="animate form">
+                  <form  class="form-horizontal" role="form" method="POST" action="{{ route('register_store') }}">
+                    {{ csrf_field() }}
+                      <h1> Sign up </h1>
+                      <table width="100%" border='1' cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">User Name</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('name'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('name') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <div class="col-md-6">
+                                <input style ='border:solid 1px;' id="password" type="password" class="form-control" name="password" required>
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                              <label for="email" class="col-md-4 control-label">E-Mail</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                  @if ($errors->has('email'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('email') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm</label>
+                            <div class="col-md-6">
+                                <input style ='border:solid 1px;' id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td colspan=2>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <small>Patikan Email tertulis benar dan masih aktif.</small>
+                        </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>                         
+                          <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Nama Depan</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="first_name" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('first_name'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('first_name') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Nama Belakang</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="last_name" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('last_name'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('last_name') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Alamat</label>
+                              <div class="col-md-6">
+                                  <textarea style ='border:solid 1px;' name="address" class="form-control"></textarea>
+                                  @if ($errors->has('address'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('address') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>    
+                        </td>
+                        <td>                          
+                          <div class="form-group{{ $errors->has('city_id') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Kota</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="city_id" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('city_id'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('city_id') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div> 
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>                          
+                          <div class="form-group{{ $errors->has('province_id') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Propinsi</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="province_id" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('province_id'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('province_id') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                        <td>                          
+                          <div class="form-group{{ $errors->has('zip_code') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Kode Pos</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="zip_code" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('zip_code'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('zip_code') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          
+                          <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Telp</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="phone" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('phone'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('phone') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                        <td>
+                          
+                          <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Fax</label>
+                              <div class="col-md-6">
+                                  <input  style ='border:solid 1px;' id="name" type="text" class="form-control" name="fax" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('fax'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('fax') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td colspan=2>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <br>
+                            <h4>Kelembagaan ( di Kotaku ).</h4>
+                        </div>
+                        </td>
+                      </tr>
+                        <tr>
+                        <td colspan=2>
+                          
+                          <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Jabatan</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="position" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('position'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('position') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                          </td>
+                        </tr>
+                        <tr>
+                        <td colspan=2>
+                          
+                          <div class="form-group{{ $errors->has('other') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Ket.Lainnya</label>
+                              <div class="col-md-6">
+                                  <textarea  style ='border:solid 1px;' class="form-control" name="other" value="{{ old('name') }}"></textarea>
+                                  @if ($errors->has('other'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('other') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                          </td>
+                        </tr>
+                        <tr>
+                        <td colspan=2>                          
+                          <div class="form-group{{ $errors->has('region') ? ' has-error' : '' }}">
+                          <label for="name" class="col-md-4 control-label">Wilayah</label>
+                              <div class="col-md-6">
+                                  <input style ='border:solid 1px;' id="name" type="text" class="form-control" name="region" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('region'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('region') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-group">
+                              <div class="col-md-6 col-md-offset-4">
+                                  <button type="submit" class="btn btn-primary">
+                                      Register
+                                  </button>
+                              </div>
+                            </div> 
+                          </td>
+                        </tr>
+
+                        </table>                  
+                    </form>
+                 </div>
+              </table> 
+              </ul>
+            </div>
+          </div>
+          <!-- End page left side -->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+         <div class="blog_sidebar">
+          <!-- Start single side bar pra kata tiap berita -->
+          <div class="single_sidebar">
+            <h2>Peraturan Registrasi</h2>
+            <ul class="catg_nav">
+                Register ini dipergunakan untuk curah pendapat pelaksanaan KOTAKU. Tidak diperkenankan mengirimkan berita atau pesan atau tulisan yang berupa fitnah, hasutan, penghinaan, pelecehan, pornografi, narkoba, pendapat yang berbau SARA (Suku, Agama, Ras, dan Antargolongan), iklan (advertising) dan bernuansa politik apapun bentuknya. Pergunakan bahasa yang sopan dan berkaidah. Tim Website KOTAKU tidak bertanggungjawab atas isi atau kebenaran informasi di forum ini.<br><br>Jika Anda berkeinginan untuk menuliskan pesan/tulisan yang bersifat <strong>&quot;pengaduan KOTAKU&quot;</strong> mohon gunakan fasilitas <strong><a class='textLink' href='pengaduan.asp?catid=1'>Pengaduan online</a></strong>.
+            </ul>
+            <h2></h2>
+          </div>
+          <!-- Start single side bar -->
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End content editing  -->
+  @endsection
