@@ -44,7 +44,7 @@ DB_PASSWORD=DB_PASSWORD
 Created by [andri-putra.com](http://andri-putra.com)
 
 ### Demo
-`http://code-test.andri-putra.com`
+(https://code-test.andri-putra.com)
 
 ## License
 
